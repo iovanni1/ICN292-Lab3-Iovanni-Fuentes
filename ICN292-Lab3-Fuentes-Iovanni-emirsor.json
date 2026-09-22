@@ -1,0 +1,60 @@
+{
+  "name": "Flujo emirsor",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "531c0205-f2fa-4fcf-9849-7960246f4ebb",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://iovanni.app.n8n.cloud/webhook-test/triage_lab3",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"id_solicitud\": \"DEV-C01\",\n  \"sku\": \"PL-120\",\n  \"monto\": \"9990\",\n  \"dias_desde_compra\": \"1\",\n  \"estado_producto\": \"sin_abrir\",\n  \"email_cliente\": \"cliente_c01@example.cl\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "e90f44e7-59d5-41f6-9d03-74adddf6c1bd",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "6dfd28b0-663c-49d7-b6ef-e05c0c291765",
+  "meta": {
+    "instanceId": "6085046f51e3bb3559da9ad7e31f801e6dcb58e548d058d94ae68690a480e983"
+  },
+  "nodeGroups": [],
+  "id": "nBz4m1DYpDwoL9EO",
+  "tags": []
+}
